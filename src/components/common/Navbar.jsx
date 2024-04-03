@@ -2,10 +2,12 @@ import React from "react";
 import appLogo from "../../assets/logo.svg";
 export default function Navbar() {
   return (
-    <nav className="sticky top-0">
+    <nav className="sticky top-0 max-sm:flex">
       <div className="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 text-gray-100">
-        <img src={appLogo} alt="" />
-        <h1 className="text-center flex items-center">IWeather</h1>
+        <img src={appLogo} className="w-10" alt="" />
+        <a href="">
+          <h1 className="text-xl">IWeather</h1>
+        </a>
       </div>
     </nav>
   );
