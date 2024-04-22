@@ -6,3 +6,5 @@ export const placesOptions = {
     "X-RapidAPI-Host": import.meta.env.VITE_API_HOST,
   },
 };
+
+export const currentWeatherAPI = "https://api.openweathermap.org/data/2.5/"

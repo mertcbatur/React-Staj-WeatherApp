@@ -18,13 +18,14 @@ export default function WeatherSearch({ onSearchChange }) {
           namePrefix: inputValue,
         },
         headers: placesOptions.headers,
+  
       });
 
       return {
         options: response.data.data.map((city) => {
           return {
             value: `${city.latitude},${city.longitude}`,
-            label: `${city.name},${city.region.substring(0, 5)}, ${
+            label: `${city.name},${city.region.substring(0, 3)}, ${
               city.countryCode
             }`,
           };
