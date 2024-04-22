@@ -25,21 +25,14 @@ function App({ data, forecastData }) {
         import.meta.env.VITE_WEATHER_API
       }&units=metric`
     );
-    const uvFetch = axios.get(
-      `http://api.openweathermap.org/data/2.5/uvi?appid=${
-        import.meta.env.VITE_WEATHER_API
-      }&lat=${lat}&lon=${lon}`
-    );
 
     Promise.all([currentWeatherFetch, forecastFetch, uvFetch])
       .then(async (response) => {
         const weatherResponse = response[0].data;
         const forecastResponse = response[1].data;
-        const uvResponse = response[2].data;
 
         setCurrentWeather({ city: searchValue.label, ...weatherResponse });
         setForecast({ city: searchValue.label, ...forecastResponse });
-        setUv({ city: searchValue.label, ...uvResponse });
       })
       .catch((error) => {
         console.log(error);
@@ -48,7 +41,6 @@ function App({ data, forecastData }) {
 
   console.log(curentWeather);
   console.log(forecast);
-  console.log(uv);
 
   return (
     <>
