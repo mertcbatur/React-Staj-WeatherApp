@@ -26,7 +26,7 @@ function App({ data, forecastData }) {
       }&units=metric`
     );
 
-    Promise.all([currentWeatherFetch, forecastFetch, uvFetch])
+    Promise.all([currentWeatherFetch, forecastFetch,])
       .then(async (response) => {
         const weatherResponse = response[0].data;
         const forecastResponse = response[1].data;
